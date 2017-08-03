@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,25 +22,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nZW-RJ-PI5">
-                                <rect key="frame" x="0.0" y="183" width="375" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="3Y3-nS-UN6"/>
-                                </constraints>
-                                <nil key="textColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTE-ta-JPe">
+                                <rect key="frame" x="56" y="220" width="263" height="347"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nZW-RJ-PI5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="91J-SQ-HzC"/>
-                            <constraint firstItem="nZW-RJ-PI5" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="i1q-LX-Naq"/>
-                            <constraint firstItem="nZW-RJ-PI5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="reK-ER-IzS"/>
+                            <constraint firstItem="TTE-ta-JPe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="200" id="Cw7-fS-FzW"/>
+                            <constraint firstItem="TTE-ta-JPe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="UaQ-Yd-G8C"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TTE-ta-JPe" secondAttribute="bottom" constant="100" id="ceF-Ji-cKx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TTE-ta-JPe" secondAttribute="trailing" constant="40" id="iEJ-I5-BBi"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="textField" destination="nZW-RJ-PI5" id="H1x-Fh-BSG"/>
+                        <outlet property="textField" destination="TTE-ta-JPe" id="KtG-T0-NRW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

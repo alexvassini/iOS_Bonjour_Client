@@ -8,16 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextViewDelegate {
 
-    @IBOutlet weak var textField: UITextField!
+   
     
+    @IBOutlet weak var textField: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         startAdvertisingToServer()
         
-        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        textField.delegate = self
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,12 +28,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func textFieldDidChange(_ textField: UITextField) {
-        
-        BonjourTCPClient.sharedInstance.send(self.textField.text!)
-        print("OI")
-    }
-
+    
     func startAdvertisingToServer() {
         
        
@@ -48,6 +46,12 @@ class ViewController: UIViewController {
         
     }
 
+    func textViewDidChange(_ textView: UITextView) {
+        
+        BonjourTCPClient.sharedInstance.send(self.textField.text!)
+        print("OI")
+
+    }
 
 }
 
